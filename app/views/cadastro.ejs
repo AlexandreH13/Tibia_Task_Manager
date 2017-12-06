@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Cadastro
+	</title>
+
+	<!-- incluindo css -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<form class="form-inline form-entrar" action="/characters" method="get" >
+				<div class="form-group">
+					<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" />
+					<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" />
+					<button type="submit" class="btn btn-success">Entrar</button>
+				</div>
+			</form>
+		</div>
+
+		<br />
+			
+	</nav>
+
+	<div class="jumbotron">
+
+		<!-- Validação -->
+		<% if(validacao.length>0){ %>
+			<div class="alert alert-danger">
+				<strong>Atenção!</strong>
+				<ul>
+					<% for(var i=0; i<validacao.length; i++){ %>
+						<li><%= validacao[i].msg %></li>
+					<% } %>
+				</ul>
+			</div>
+		<% } %>
+
+	  <h1 class="display-3">Preencha os campos</h1>
+	  <hr class="my-4">
+		<form class="form-inline form-entrar" action="/cadastrar" method="post" >
+				<div class="form-group">
+				<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" />
+				<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" type="password" />
+				<button type="submit" class="btn btn-info">Cadastrar</button>
+			</div>
+		</form>
+
+	</div>
+
+</body>
+</html>
