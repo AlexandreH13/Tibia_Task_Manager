@@ -1,17 +1,15 @@
-/* Importar mongodb */
+/* imprtar o mogodb */
 var mongo = require('mongodb');
 
 /* Wrapper */
-var connMongo = function(){
-
+var conMongoDB = function(){
 	var db = new mongo.Db(
-		'tibiatask',
+		'taskmanager',
 		new mongo.Server(
 			'localhost', //string contendo o endereço do servidor
-			27017, //Porta
+			27017, //porta de conexão
 			{}
 		),
-
 		{}
 	);
 
@@ -19,6 +17,6 @@ var connMongo = function(){
 }
 
 /* Função exportada para executar no autoload */
-module.exports = function(){
-	return connMongo;
+module.exports = function () {
+	return conMongoDB;
 }

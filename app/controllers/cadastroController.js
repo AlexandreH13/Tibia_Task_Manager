@@ -1,6 +1,6 @@
 module.exports.cadastro = function(application, req, res){
 
-	res.render("cadastro", {validacao: {}});
+	res.render('cadastro', {validacao: {}, dados: {}});
 }
 
 module.exports.cadastrar = function(application, req, res){
@@ -13,9 +13,15 @@ module.exports.cadastrar = function(application, req, res){
 	var erros = req.validationErrors();
 
 	if(erros){
-		res.render('cadastro', {validacao: erros});
+		res.render('cadastro', {validacao: erros, dados: dados});
 		return;
 	}
 
+	var connection = application.config.dbConnection;
+	console.log(connection);
+	var UsuariosDAO = new application.app.models.UsuariosDAO(connection);
 
+	UsuariosDAO.inserirUsuario(dados);
+
+	res.render('index');
 }
