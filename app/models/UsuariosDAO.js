@@ -12,7 +12,32 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario){
 		//através do mongoclient é que manipulamos as collection e documentos
 		mongoclient.collection("usuarios", function(err, collection){
 			collection.insert(usuario);
+			mongoclient.close();
+		});
+	});
+}
 
+UsuariosDAO.prototype.autenticar = function(usuario, req, res){
+
+	this._connection.open( function(err, mongoclient){
+		mongoclient.collection("usuarios", function(err, collection){
+
+			/*Query para verificar e autenticar as informações*/
+			collection.find(usuario).toArray(function(err, result){
+
+				/* Cria as variávies de seção */
+				if(result[0] != undefined){
+					req.session.autorizado = true;
+					req.session.character = result[0].character;
+				}
+
+				if(req.session.autorizado){
+					res.redirect("characters");
+				}else{
+					res.render("index", {validacao: {}});
+				}
+
+			});
 			mongoclient.close();
 		});
 	});

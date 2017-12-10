@@ -27,7 +27,7 @@ app.use(expressValidator());
 
 /* Configura o moddleware express-session*/
 app.use(expressSession({
-	secret: 'cookie_secret',
+	secret: 'nogyab',
 	resave: false,
 	saveUninitialized: false
 }))
