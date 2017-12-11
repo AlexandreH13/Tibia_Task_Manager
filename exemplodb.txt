@@ -1,0 +1,14 @@
+{
+   
+   "usuario": "user",
+   "senha": 123,
+   "characters": [
+      "darano": {
+         "task1: " qtdMonstros
+      }
+      "tyros": {
+         "task2: " qtdMonstros
+      }    	
+   ]
+
+}

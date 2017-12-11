@@ -134,7 +134,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #F5F5DC;
 }
 
 [tabindex="-1"]:focus {
@@ -298,6 +298,15 @@ textarea {
 
 table {
   border-collapse: collapse;
+}
+
+#container_passos{
+  border-color: blue; 
+}
+
+.box{
+  display: inline-block;
+  margin: 10px 50px;
 }
 
 caption {

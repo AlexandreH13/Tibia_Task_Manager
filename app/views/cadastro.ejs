@@ -13,11 +13,11 @@
 
 	<nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
-			<form class="form-inline form-entrar" action="/characters" method="get" >
+			<form class="form-inline form-entrar" action="/autenticar" method="post" >
 				<div class="form-group">
-					<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" />
-					<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" />
-					<button type="submit" class="btn btn-success">Entrar</button>
+					<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" style="margin-left: -85px"/>
+					<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" style="margin-left: 15px"/>
+					<button type="submit" class="btn btn-success" style="margin-left: 10px">Entrar</button>
 				</div>
 			</form>
 		</div>
@@ -45,8 +45,8 @@
 		<form class="form-inline form-entrar" action="/cadastrar" method="post" >
 				<div class="form-group">
 				<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" />
-				<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" type="password" />
-				<button type="submit" class="btn btn-info">Cadastrar</button>
+				<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" type="password" style="margin-left: 15px"/>
+				<button type="submit" class="btn btn-info"style="margin-left: 10px">Cadastrar</button>
 			</div>
 		</form>
 

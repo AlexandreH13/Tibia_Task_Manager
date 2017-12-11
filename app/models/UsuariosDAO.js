@@ -1,4 +1,4 @@
-/* DAO usuários */
+/* UsuáriosDAO */
 function UsuariosDAO(connection){
 
 	this._connection = connection();
@@ -17,6 +17,7 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario){
 	});
 }
 
+/* Autenticar através das variáveis de seção */
 UsuariosDAO.prototype.autenticar = function(usuario, req, res){
 
 	this._connection.open( function(err, mongoclient){
@@ -28,7 +29,8 @@ UsuariosDAO.prototype.autenticar = function(usuario, req, res){
 				/* Cria as variávies de seção */
 				if(result[0] != undefined){
 					req.session.autorizado = true;
-					req.session.character = result[0].character;
+					req.session.user = result[0].usuario;
+					//req.session.character = result[0].character;
 				}
 
 				if(req.session.autorizado){
