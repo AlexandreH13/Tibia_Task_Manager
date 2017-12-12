@@ -6,4 +6,8 @@ module.exports = function (application) {
 	application.get('/sair', function(req, res){
 		application.app.controllers.charactersController.sair(application, req, res);
 	})
+
+	application.post('/adicionarCharacter', function(req, res){
+		application.app.controllers.charactersController.adicionarCharacter(application, req, res);
+	})
 }

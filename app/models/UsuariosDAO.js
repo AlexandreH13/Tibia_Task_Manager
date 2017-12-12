@@ -9,7 +9,7 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario){
 
 	/* Abrir conexão com mongo */
 	this._connection.open( function(err, mongoclient){
-		//através do mongoclient é que manipulamos as collection e documentos
+		//através do mongoclient é que manipulamos as collection e documentosS
 		mongoclient.collection("usuarios", function(err, collection){
 			collection.insert(usuario);
 			mongoclient.close();
