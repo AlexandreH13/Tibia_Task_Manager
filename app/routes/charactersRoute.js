@@ -10,4 +10,8 @@ module.exports = function (application) {
 	application.post('/adicionarCharacter', function(req, res){
 		application.app.controllers.charactersController.adicionarCharacter(application, req, res);
 	})
+
+	application.get('/exibirCharacters', function(req, res){
+		res.render('exibirCharacters');
+	})
 }

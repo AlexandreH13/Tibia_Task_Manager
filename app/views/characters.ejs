@@ -34,7 +34,7 @@
 
 	<nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
-			<strong><%%></strong>
+			<strong><%= usuario%></strong>
 			<div class="form-group sair">
 				<button type="button" class="btn btn-info pull-right" id="btn_sair">Sair</button>
 			</div>
@@ -46,16 +46,8 @@
 	  <h1 class="display-3">Characters</h1>
 	  <p class="lead">Adicione um character aqui</p>
 	  <hr class="my-4">
-	  <span class="badge badge-pill badge-success" id="add_char">+</span>
-	  <div class="row">
-			<div class="col-sm-3"></div>
-			<div class="col-sm-9">
-				<div class="acoes" id="acoes">Add character</div>					
-			</div>
-		</div>
-
 		<!-- Validação -->
-		<% if(validacao.length>0){ %>
+		<% if(validacao.length > 0){ %>
 			<div class="alert alert-danger">
 				<strong>Atenção!</strong>
 				<ul>
@@ -74,6 +66,20 @@
 				<button type="submit" class="btn btn-info"style="margin-left: 10px">Adicionar</button>
 			</div>
 		</form>
+
+		<% if(characters.length > 0){ %>
+			<% for(var i=0; i<characters.length; i++){ %>
+		<div id="box2" class="box">
+			<div class="card border-info mb-3" style="max-width: 20rem;">
+				<div class="card-header"><%= characters[i].nome%></div>
+				 <div class="card-body text-info">
+				   <h4 class="card-title">Comece criando sua conta</h4>
+				   <p class="card-text">Clique no botão cadastrar no menu acima e comece a gerenciar suas tasks.</p>
+				 </div>
+			</div>
+		</div>
+			<% } %>
+		<% } %>
 
 	</div>
 

@@ -1,6 +1,6 @@
 module.exports.cadastro = function(application, req, res){
 
-	res.render('cadastro', {validacao: {}, dados: {}});
+	res.render('cadastro', {validacao: {}});
 }
 
 module.exports.cadastrar = function(application, req, res){
@@ -13,7 +13,7 @@ module.exports.cadastrar = function(application, req, res){
 	var erros = req.validationErrors();
 
 	if(erros){
-		res.render('cadastro', {validacao: erros, dados: dados});
+		res.render('cadastro', {validacao: erros});
 		return;
 	}
 
