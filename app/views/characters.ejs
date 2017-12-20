@@ -67,6 +67,7 @@
 				   <h4 class="card-text">Vocação: <%= characters[i].vocacao%></h4>
 				   <h4 class="card-text">Mundo: <%= characters[i].mundo%></h4>
 				   <h4 class="card-text">Tasks <a href="/adicionarTask"><span class="badge badge-pill badge-success">+</span></a></h4>
+				   <a href="/deletarCharacter?id_character=<%= characters[i]._id%>" class="btn btn-danger" style="margin-left: 30px">Deletar</a>
 				 </div>
 			</div>
 		</div>

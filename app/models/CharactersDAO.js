@@ -1,4 +1,7 @@
 /* CharactersDAO */
+
+var ObjectID = require('mongodb').ObjectId;
+
 function CharactersDAO(connection){
 
 	this._connection = connection();
@@ -33,7 +36,23 @@ CharactersDAO.prototype.buscarCharacters = function(user, req, res){
 				}else{
 					res.send('O usuário precisa fazer login');
 				}
+				mongoclient.close();
 			});
+		});
+	});
+}
+
+CharactersDAO.prototype.deletarCharacter = function(_idCharacter, res){
+	
+	this._connection.open( function(err, mongoclient){
+		mongoclient.collection("character", function(err, collection){
+			collection.remove(
+				{_id: ObjectID(_idCharacter)},
+				function(err, result){
+					res.redirect("characters");
+					mongoclient.close();
+				}
+			);
 		});
 	});
 }

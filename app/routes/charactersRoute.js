@@ -10,4 +10,8 @@ module.exports = function (application) {
 	application.post('/adicionarCharacter', function(req, res){
 		application.app.controllers.charactersController.adicionarCharacter(application, req, res);
 	})
+
+	application.get('/deletarCharacter', function(req, res){
+		application.app.controllers.charactersController.deletarCharacter(application, req, res);
+	})
 }

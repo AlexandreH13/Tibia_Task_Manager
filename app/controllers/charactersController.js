@@ -28,6 +28,17 @@ module.exports.adicionarCharacter = function(application, req, res){
 	res.redirect('characters');
 }
 
+module.exports.deletarCharacter = function(application, req, res){
+	
+	var url_query = req.query;
+
+	var connection = application.config.dbConnection;
+	var CharactersDAO = new application.app.models.CharactersDAO(connection);
+
+	var _idCharacter = url_query.id_character;
+	CharactersDAO.deletarCharacter(_idCharacter, res);
+}
+
 module.exports.sair = function(application, req, res){
 	
 	req.session.destroy( function(err){
