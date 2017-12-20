@@ -17,7 +17,7 @@ module.exports.adicionarCharacter = function(application, req, res){
 	var erros = req.validationErrors();
 	var user = req.session.user;
 	if(erros){
-		res.render('characters', {validacao: erros, usuario: req.session.user, characters: {}});
+		res.render('characters', {validacao: erros, usuario: req.session.user, characters: req.session.characters});
 		return;
 	}
 
@@ -25,7 +25,7 @@ module.exports.adicionarCharacter = function(application, req, res){
 	var CharactersDAO = new application.app.models.CharactersDAO(connection);
 	CharactersDAO.adicionarCharacter(dadosCharacter, user);
 
-	res.render('characters', {validacao: {}, usuario: {}, characters: {}});
+	res.redirect('characters');
 }
 
 module.exports.sair = function(application, req, res){

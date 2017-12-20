@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Tasks
+	</title>
+
+	Adicionar Tasks
+
+	<!-- JQuery -->
+	<script src="js/jquery-2.2.1.js"></script>
+
+	<!-- incluindo css -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<script>
+		$(document).ready( function(){
+			$('#btn_sair').click(function(){
+				window.location.href = '/sair';
+			});
+		});
+
+	</script>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<strong><%= usuario%></strong>
+			<div class="form-group sair">
+				<button type="button" class="btn btn-info pull-right" id="btn_sair">Sair</button>
+			</div>
+		</div>
+	</nav>
+
+</body>
+</html>

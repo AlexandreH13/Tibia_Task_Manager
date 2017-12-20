@@ -27,6 +27,8 @@ CharactersDAO.prototype.buscarCharacters = function(user, req, res){
 			collection.find({usuario: {$eq: user}}).toArray(function(err, result){
 				/* Se tiver passado pelo fluxo de autenticação */
 				if(req.session.autorizado){
+					/* Variável de sessão para recuperar os characters */
+					req.session.characters = result;
 					res.render('characters', {validacao: {}, usuario: req.session.user, characters: result});
 				}else{
 					res.send('O usuário precisa fazer login');
